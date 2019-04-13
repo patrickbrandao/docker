@@ -41,6 +41,9 @@ docker exec -it vps-test /bin/bash
 docker stop vps-test
 docker rm vps-test
 
+# Exemplo: especificar porta de SSH e senha de root:
+docker run -d --privileged --cap-add=ALL --restart=always --env ROOT_PASSWORD=tulipa --env SSH_PORT=2222 -h vps-001 --name=vps-001 alpine-vps
+
 ```
 
 #### Criando versoes (tags) diferentes
