@@ -11,6 +11,7 @@ RT_DEV=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f3 -d/)
 RT_LOC=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f4 -d/)
 
 NAMESERVER=$(cat /etc/resolv.conf  | grep nameserver | cut -f2 -d" ")
+NAMESERVER=$(/bin/echo $NAMESERVER)
 
 # conexao ssh ja mostra o vps-banner via banner do servidor ssh
 if [ "x$SSH_CONNECTION" = "x" ]; then
