@@ -37,11 +37,43 @@ docker run --privileged --cap-add=ALL --restart=always -d -h vps-test --name=vps
 # Entrando no container:
 docker exec -it vps-test /bin/bash
 
-# Destruindo container:
+# Destruindo container de teste:
 docker stop vps-test
 docker rm vps-test
 
 ```
+
+#### Criando versoes (tags) diferentes
+
+Você não pode criar ou apagar uma imagem da alpine-vps que esteja em uso (containers rodando ou criados).
+Se precisar criar alteracoes para novos containers (nao vai afetar os antigos ja rodando),
+use o versionamento por tags:
+
+```
+
+# Entre no diretorio alpine-vps
+cd alpine-vps/
+
+# Torne os scripts executaveis:
+chmod +x rootfs/bin/*
+chmod +x rootfs/opt/*
+chmod +x rootfs/opt/entrypoints/*
+
+# Crie a imagem versao 001:
+docker build -t alpine-vps:v001 .
+
+# Crie a imagem versao 002:
+docker build -t alpine-vps:v002 .
+
+# Listar imagens:
+docker image ls
+
+# Exemplo: apagar uma imagem pela tag especifica (que nao esteja em uso):
+docker rmi alpine-vps:v001
+docker rmi alpine-vps:v002
+
+```
+
 
 #### Aplicacoes all-in-one no pseudo-VPS
 
