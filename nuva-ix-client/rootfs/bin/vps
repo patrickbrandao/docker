@@ -1,0 +1,43 @@
+#!/bin/sh
+
+if [ -f /etc/os-release ]; then . /etc/os-release; fi
+if [ -f /etc/profile.d/00-env_vars.sh ]; then . /etc/profile.d/00-env_vars.sh; fi
+
+KR=$(uname -r)
+RT=$(ip ro get 1.2.3.4 | grep via | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#")
+
+RT_GWT=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f2 -d/)
+RT_DEV=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f3 -d/)
+RT_LOC=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f4 -d/)
+
+NAMESERVER=$(cat /etc/resolv.conf  | grep nameserver | cut -f2 -d" ")
+NAMESERVER=$(/bin/echo $NAMESERVER)
+
+# conexao ssh ja mostra o vps-banner via banner do servidor ssh
+if [ "x$SSH_CONNECTION" = "x" ]; then
+	# modo docker exec
+	cat /etc/vps-banner 2>/dev/null
+else
+	# modo ssh
+	sshinfo=$(echo $SSH_CONNECTION | sed 's# #:#; s# #_#; s# #:#; s#_# -> #')
+	echo "      SSH Conecction: $sshinfo"
+	echo
+fi
+
+# Informacoes do sistema utilizado como base do container
+echo "      $PRETTY_NAME"
+echo "      Kernel $KR"
+echo
+echo "      $HOSTNAME"
+echo
+
+# Informacoes de rede do container VPS
+echo "      Resolv DNS...: $NAMESERVER"
+echo "      Local local..: $RT_LOC"
+echo "      Local gateway: $RT_GWT"
+echo "      Local iface..: $RT_DEV"
+echo
+echo
+
+
+
