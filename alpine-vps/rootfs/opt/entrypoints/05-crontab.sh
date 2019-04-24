@@ -25,20 +25,20 @@
 	mkdir -p /etc/cron.weekly
 	mkdir -p /etc/cron.monthly
 	(
-		echo 'SHELL=/bin/sh'
-		echo 'PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
-		echo 'MAILTO=""'
-		echo 'USER="root"'
+		#echo 'SHELL=/bin/sh'
+		#echo 'PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+		#echo 'MAILTO=""'
+		#echo 'USER="root"'
 		echo
 		echo '# min hour day month weekday command'
-		echo '*/1   *    *   *     *       run-parts /etc/cron.1min'
-		echo '*/5   *    *   *     *       run-parts /etc/cron.5min'
-		echo '*/15  *    *   *     *       run-parts /etc/cron.15min'
-		echo '*/30  *    *   *     *       run-parts /etc/cron.30min'
-		echo '0     *    *   *     *       run-parts /etc/cron.hourly'
-		echo '0     2    *   *     *       run-parts /etc/cron.daily'
-		echo '0     3    *   *     6       run-parts /etc/cron.weekly'
-		echo '0     5    1   *     *       run-parts /etc/cron.monthly'
+		echo '*/1   *    *   *     *       /usr/bin/run-parts --regex=. /etc/cron.1min'
+		echo '*/5   *    *   *     *       /usr/bin/run-parts --regex=. /etc/cron.5min'
+		echo '*/15  *    *   *     *       /usr/bin/run-parts --regex=. /etc/cron.15min'
+		echo '*/30  *    *   *     *       /usr/bin/run-parts --regex=. /etc/cron.30min'
+		echo '0     *    *   *     *       /usr/bin/run-parts --regex=. /etc/cron.hourly'
+		echo '0     2    *   *     *       /usr/bin/run-parts --regex=. /etc/cron.daily'
+		echo '0     3    *   *     6       /usr/bin/run-parts --regex=. /etc/cron.weekly'
+		echo '0     5    1   *     *       /usr/bin/run-parts --regex=. /etc/cron.monthly'
 		echo
 	) > /tmp/crontab.txt
 	cat /tmp/crontab.txt | crontab -
