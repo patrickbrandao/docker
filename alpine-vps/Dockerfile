@@ -21,7 +21,7 @@ RUN ( \
     coreutils bash readline pwgen lzo sudo tar gzip xz mtr perl \
     wget curl iproute2 sed tcpdump whois fping run-parts bind-tools sshpass \
     openssh-client openssh-keygen openssh-server openssh ca-certificates \
-    openssl git; \
+    openssl git mc; \
 )
 
 # Camada: Arquivos
