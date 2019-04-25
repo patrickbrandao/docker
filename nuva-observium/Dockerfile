@@ -1,4 +1,6 @@
 
+
+
 FROM alpine-vps:latest
 
 
@@ -33,14 +35,12 @@ ENV OBSERVIUM_ADMIN_PASSWORD obs123
 
 
 
-
 # Preparar ambiente
 #========================================================================
 
 RUN ( \
     apk --update --no-cache add \
         py-mysqldb nmap nginx apache2-utils \
-        \
         php7 \
         php7-xml php7-xmlrpc php7-xmlreader \
         php7-bcmath php7-intl php7-ctype \
@@ -76,7 +76,7 @@ RUN ( \
         \
         imagemagick graphviz ipmitool rrdtool rrdtool-cached net-snmp net-snmp-tools \
         \
-        mariadb mariadb-server-utils mariadb-common mariadb-client; \
+        mariadb mariadb-server-utils mariadb-common mariadb-client || exit 11; \
     mkdir -p /opt/observium; \
 )
 
@@ -99,6 +99,7 @@ RUN ( \
     chmod +x /opt/entrypoint.sh 2>/dev/null; \
     true; \
 )
+
 
 
 
