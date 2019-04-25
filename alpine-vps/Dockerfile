@@ -30,12 +30,12 @@ RUN ( \
 # Scripts e arquivos sobrepostos
 ADD rootfs/ /
 
-# Ajustar permissoes
+# Ajustar permissoes dos scripts
 RUN ( \
 	chmod +x /etc/cron.*/* 2>/dev/null; \
 	chmod +x /opt/entrypoints/* 2>/dev/null; \
 	chmod +x /opt/entrypoint.sh 2>/dev/null; \
-	true;
+	true; \
 )
 
 # Ponto de entrada
@@ -43,5 +43,6 @@ RUN ( \
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD ["/usr/bin/supervisord"]
+
 
 
