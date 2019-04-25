@@ -17,7 +17,7 @@
         echo 'autostart=true'
         echo 'autorestart=true'
         echo 'user=root'
-        echo 'priority=90'
+        echo 'priority=50'
 		echo 'startretries=999999'; \
 		echo 'startsecs=3'; \
 		echo 'stopwaitsecs=3'; \
@@ -29,4 +29,6 @@
     ) > /etc/supervisor/conf.d/php-fpm7.conf
 
 
+
+exit 0
 
