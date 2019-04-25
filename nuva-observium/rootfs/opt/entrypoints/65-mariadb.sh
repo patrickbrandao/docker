@@ -33,6 +33,14 @@ _logps(){ _log "Process list:"; (echo; ps aux; echo; ) >> $initlogfile; }
    		_eval "$CMD"
     }
 
+    # Garantir permissao das bases de dados
+    _log "Mariadb: Garantindo permissoes em $MARIADB_DATADIR/*"
+    chown -R mysql.mysql $MARIADB_DATADIR/
+
+    chown mysql.mysql $MARIADB_DATADIR/*
+    chown mysql.mysql $MARIADB_DATADIR/mysql
+    chown mysql.mysql $MARIADB_DATADIR/mysql/*
+
 # Rodar mariadb
 	_log "Mariadb: Iniciando instancia"
 	( ( /usr/bin/mysqld_safe --datadir=$MARIADB_DATADIR --pid-file=$MARIADB_PIDFILE ) 2>/dev/null 1>/dev/null & )
@@ -53,20 +61,23 @@ _logps(){ _log "Process list:"; (echo; ps aux; echo; ) >> $initlogfile; }
         echo 'autostart=true'; \
         echo 'autorestart=true'; \
         echo 'priority=20'
-        echo 'user=root'; \
 		echo 'startretries=999999'; \
 		echo 'startsecs=3'; \
 		echo 'stopwaitsecs=3'; \
-        echo 'stdout_logfile=/dev/stdout'; \
-        echo 'stdout_logfile_maxbytes=0'; \
-        echo 'stderr_logfile=/dev/stderr'; \
-        echo 'stderr_logfile_maxbytes=0'; \
-        echo 'priority=10'; \
+        echo 'user=root'
+        echo 'stdout_logfile=/var/log/supervisor/%(program_name)s.log'
+        echo 'stderr_logfile=/var/log/supervisor/%(program_name)s.err'
     ) > /etc/supervisor/conf.d/mariadb.conf; \
 
 
 # Logar processos em execucao para verificar se o MARIADB esta rodando
     _logps
+
+
+
+
+exit 0
+
 
 
 
