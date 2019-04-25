@@ -76,7 +76,11 @@ RUN ( \
         \
         imagemagick graphviz ipmitool rrdtool rrdtool-cached net-snmp net-snmp-tools \
         \
-        mariadb mariadb-server-utils mariadb-common mariadb-client || exit 11; \
+        mariadb mariadb-server-utils mariadb-common mariadb-client \
+        \
+        smokeping fcgiwrap spawn-fcgi \
+        \
+        || exit 11; \
     mkdir -p /opt/observium; \
 )
 
@@ -99,6 +103,17 @@ RUN ( \
     chmod +x /opt/entrypoint.sh 2>/dev/null; \
     true; \
 )
+
+
+
+
+
+
+
+
+
+
+
 
 
 
