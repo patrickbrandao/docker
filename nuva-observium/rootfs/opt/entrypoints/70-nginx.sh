@@ -16,7 +16,7 @@
     (
     	echo '[program:nginx]'
         echo 'command=/usr/sbin/nginx'
-        echo 'priority=90'
+        echo 'priority=60'
 		echo 'startretries=999999'; \
 		echo 'startsecs=3'; \
 		echo 'stopwaitsecs=3'; \
@@ -27,4 +27,6 @@
         echo 'stderr_logfile=/var/log/supervisor/%(program_name)s.err'
     ) > /etc/supervisor/conf.d/nginx.conf
 
+
+exit 0
 
