@@ -23,11 +23,6 @@ Trata-se de um container alpine multiprocessos semelhante a uma VPS em VM
 # Entre no diretorio alpine-vps
 cd alpine-vps/
 
-# Torne os scripts executaveis:
-chmod +x rootfs/bin/*
-chmod +x rootfs/opt/*
-chmod +x rootfs/opt/entrypoints/*
-
 # Crie a imagem:
 docker build -t alpine-vps .
 
@@ -42,7 +37,11 @@ docker stop vps-test
 docker rm vps-test
 
 # Exemplo: especificar porta de SSH e senha de root:
-docker run -d --privileged --cap-add=ALL --restart=always --env ROOT_PASSWORD=tulipa --env SSH_PORT=2222 -h vps-001 --name=vps-001 alpine-vps
+docker run -d --privileged --cap-add=ALL --restart=always \
+        --env ROOT_PASSWORD=tulipa \
+        --env SSH_PORT=2222 \
+        -h vps-001 --name=vps-001 \
+        alpine-vps
 
 ```
 
