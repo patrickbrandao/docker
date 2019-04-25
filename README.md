@@ -57,23 +57,18 @@ use o versionamento por tags:
 # Entre no diretorio alpine-vps
 cd alpine-vps/
 
-# Torne os scripts executaveis:
-chmod +x rootfs/bin/*
-chmod +x rootfs/opt/*
-chmod +x rootfs/opt/entrypoints/*
-
 # Crie a imagem versao 001:
 docker build -t alpine-vps:v001 .
 
-# Crie a imagem versao 002:
-docker build -t alpine-vps:v002 .
+#:: Crie a imagem versao 002 (exemplo):
+#:: docker build -t alpine-vps:v002 .
 
 # Listar imagens:
 docker image ls
 
 # Exemplo: apagar uma imagem pela tag especifica (que nao esteja em uso):
 docker rmi alpine-vps:v001
-docker rmi alpine-vps:v002
+#:: docker rmi alpine-vps:v002
 
 ```
 
@@ -98,6 +93,13 @@ docker build -t nuva-observium .
 
 # Crie um container (porta 80 mapeada na 8080, porta 22 mapeada na 2222):
 # - Aceita os mesmos argumentos em ENV da alpine-vps para determinar senha de root, porta de ssh
+# - variaveis adicionais:
+#    OBSERVIUM_ADMIN_USER: nome de usuario administrador do observium
+#    OBSERVIUM_ADMIN_PASSWORD: senha do administrador acima
+#    padrao: admin / obs123
+#
+
+# Criando Observium simples:
 docker run -d --restart=always -h nuva-observium --name=nuva-observium -p 8080:80 -p 2222:22 nuva-observium
 
 # Os dados gerados pelo nuva-observium ficam em:
@@ -111,12 +113,24 @@ docker run -d --restart=always -h nuva-observium --name=nuva-observium -p 8080:8
 # --mount type=bind,source=/storage/observiun01/mariadb,destination=/var/lib/mysql,readonly=false
 # 
 
+# Criando Observium de dados persistentes:
+mkdir -p /storage/observiun01/rrd
+mkdir -p /storage/observiun01/logs
+mkdir -p /storage/observiun01/mariadb
+
+docker run -d --restart=always -h nuva-observium --name=nuva-observium \
+    -p 8080:80 -p 2222:22 \
+    --mount type=bind,source=/storage/observiun01/rrd,destination=/opt/observium/rrd,readonly=false \
+    --mount type=bind,source=/storage/observiun01/logs,destination=/opt/observium/logs,readonly=false \
+    --mount type=bind,source=/storage/observiun01/mariadb,destination=/var/lib/mysql,readonly=false \
+    nuva-observium
+
 
 ```
 
 
 
-nuva-observium
+
 Em breve crio mais...
 
 
