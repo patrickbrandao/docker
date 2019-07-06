@@ -3,6 +3,35 @@
 Containers em Docker
 
 
+#### Instalar docker (base debian 9)
+
+```
+
+    # Adicionar repositorio docker
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+
+    apt-get -y update
+    apt-get -y upgrade
+    apt -y autoremove
+
+    apt-get -y install docker-ce
+    usermod -aG docker suporte 2>/dev/null
+    apt-get -y install docker-compose
+
+    # Comandos rapidos:
+    ( echo '#!/bin/sh'; echo; echo 'docker stop $1'; echo 'docker stop $1'; echo 'docker rm $1'; echo; ) > /usr/bin/undocker
+    chmod +x /usr/bin/undocker
+
+    ( echo '#!/bin/sh'; echo; echo 'docker exec -it $1 /bin/bash'; echo; ) > /usr/bin/dsh
+    chmod +x /usr/bin/dsh
+
+    ( echo '#!/bin/sh'; echo; echo 'docker ps -a'; echo; ) > /usr/bin/dps
+    chmod +x /usr/bin/dps
+
+```
+
+
 #### Baixando repositorio
 
 ```
