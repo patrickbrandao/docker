@@ -127,7 +127,34 @@ docker run -d --restart=always -h nuva-observium-01 --name=nuva-observium-01 \
 
 ```
 
+#### Alpine com Quagga
 
+Trata-se de um container alpine multiprocessos para criar um roteador Linux com Quagga
+
+```
+
+# Entre no diretorio nuva-quagga
+cd nuva-quagga/
+
+# Torne os scripts executaveis:
+chmod +x rootfs/bin/*
+chmod +x rootfs/opt/*
+chmod +x rootfs/opt/entrypoints/*
+
+# Crie a imagem:
+docker build -t nuva-quagga .
+
+# Rodando container de teste:
+docker run --privileged --cap-add=ALL --restart=always -d -h nuva-quagga-01 --name=nuva-quagga-01 nuva-quagga
+
+# Entrando no container:
+docker exec -it nuva-quagga-01 /bin/bash
+
+# Destruindo container de teste:
+docker stop nuva-quagga-01
+docker rm nuva-quagga-01
+
+```
 
 
 Em breve crio mais...
