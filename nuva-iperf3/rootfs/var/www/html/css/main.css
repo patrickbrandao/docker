@@ -1,0 +1,173 @@
+
+/*
+
+Reset CSS Defs.
+
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body, form, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: #FFFFFF;
+	color: #000000;
+	font-family: "Lucida Grande","Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	font-size: 12px;
+}
+div {
+	display: block;
+}
+img {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+a {
+	color: #5697E3;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+	text-decoration: underline;
+}
+
+/* Heading */
+h1 {font-size: 175%;}
+h2 {font-size: 150%;}
+h3 {font-size: 125%;}
+h4 {font-size: 115%;}
+
+p, pre, blockquote, ul, ol, h1, h2, h3, h4, h5, h6 {
+	margin: 2px 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+ol li {
+	margin-left: 35px;
+}
+
+th {
+	font-weight: bold;
+}
+
+fieldset {
+	padding: 4px 10px;
+}
+
+legend {
+	background: transparent;
+}
+td, th, div {
+	font-size: 100%;
+}
+
+/* FORM */
+form {
+	margin: 0;
+	padding: 0;
+}
+label {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+}
+form label {
+	cursor: pointer;
+}
+
+input, select, textarea, .inputbox, .button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/* especiais de navegadores */
+button::-moz-focus-inner {
+  border: 0;
+}
+
+/* TYPOGRAPHY
+--------------------------------------------------------- */
+pre, .code {
+	background: #ececec;
+	border-left:6px solid #696969;
+	font-family: "Courier News",monospace;
+	font-size: 1em;
+	font-size-adjust:none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.5em;
+	margin: 5px 0 15px;
+	padding: 10px 15px;
+	color: #2b2b2b;
+}
+
+blockquote {
+	padding: 1em 40px 1em 15px;
+}
+
+/**/
+small {
+	font-size: 0.85em;
+}
+
+sup {
+	position: relative;
+	bottom: 0.3em;
+	vertical-align: baseline;
+}
+
+sup em {
+	color: #FF0000;
+	font-size: .8em;
+}
+
+sup {
+	position: relative;
+	bottom: 0.3em;
+	vertical-align: baseline;
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed;
+	letter-spacing: 1px;
+	cursor: help;
+}
+
+/* @TABLES */
+table {
+	border-collapse: inherit;
+	border-spacing: 0;
+}
+
+caption, th {
+	text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

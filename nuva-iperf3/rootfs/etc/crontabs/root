@@ -1,0 +1,46 @@
+
+# SHELL=/bin/sh
+# PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+# MAILTO=""
+# USER="root"
+
+# Private schedulers:
+# min hour  day month weekday command
+*/1   *     *   *     *       /usr/bin/run-parts --regex=. /data/cron/1min
+*/2   *     *   *     *       /usr/bin/run-parts --regex=. /data/cron/2min
+*/5   *     *   *     *       /usr/bin/run-parts --regex=. /data/cron/5min
+*/15  *     *   *     *       /usr/bin/run-parts --regex=. /data/cron/15min
+*/30  *     *   *     *       /usr/bin/run-parts --regex=. /data/cron/30min
+0     *     *   *     *       /usr/bin/run-parts --regex=. /data/cron/hourly
+0     2     *   *     *       /usr/bin/run-parts --regex=. /data/cron/daily
+0     3     *   *     6       /usr/bin/run-parts --regex=. /data/cron/weekly
+0     5     1   *     *       /usr/bin/run-parts --regex=. /data/cron/monthly
+30    3     *   *     0       /usr/bin/run-parts --regex=. /data/cron/sunday
+30    3     *   *     1       /usr/bin/run-parts --regex=. /data/cron/monday
+30    3     *   *     2       /usr/bin/run-parts --regex=. /data/cron/tuesday
+30    3     *   *     3       /usr/bin/run-parts --regex=. /data/cron/wednesday
+30    3     *   *     4       /usr/bin/run-parts --regex=. /data/cron/thursday
+30    3     *   *     5       /usr/bin/run-parts --regex=. /data/cron/friday
+30    3     *   *     6       /usr/bin/run-parts --regex=. /data/cron/saturday
+
+
+# Shared schedulers:
+# min hour  day month weekday command
+*/1   *     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/1min
+*/2   *     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/2min
+*/5   *     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/5min
+*/15  *     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/15min
+*/30  *     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/30min
+0     *     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/hourly
+0     2     *   *     *       /usr/bin/run-parts --regex=. /shared/cron/daily
+0     3     *   *     6       /usr/bin/run-parts --regex=. /shared/cron/weekly
+0     5     1   *     *       /usr/bin/run-parts --regex=. /shared/cron/monthly
+30    3     *   *     0       /usr/bin/run-parts --regex=. /shared/cron/sunday
+30    3     *   *     1       /usr/bin/run-parts --regex=. /shared/cron/monday
+30    3     *   *     2       /usr/bin/run-parts --regex=. /shared/cron/tuesday
+30    3     *   *     3       /usr/bin/run-parts --regex=. /shared/cron/wednesday
+30    3     *   *     4       /usr/bin/run-parts --regex=. /shared/cron/thursday
+30    3     *   *     5       /usr/bin/run-parts --regex=. /shared/cron/friday
+30    3     *   *     6       /usr/bin/run-parts --regex=. /shared/cron/saturday
+
+
