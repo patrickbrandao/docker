@@ -1,0 +1,88 @@
+/*
+
+	Estilos
+
+*/
+
+.nbody {
+	margin: 0;
+	padding: 0;
+	background: #f5f5f5;
+	box-sizing: border-box;
+}
+
+/* caixa principal */
+.meterbox {
+	z-index: 10;
+	width: 800px;
+	height: auto;
+	display: block;
+
+	background-color: #fff;
+	background-clip: padding-box;
+	border-radius: 2px;
+	transition: box-shadow 83ms;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+
+	margin: 10px auto 20px auto;
+	padding: 2px 0px 0px 0px;
+}
+
+/* grafico */
+.metergraph {
+	margin: 0px auto 30px auto;
+}
+
+.ntitle, .stitle {
+	font-family: Source Sans Pro,Helvetica,Arial,sans-serif,Hiragino Kaku Gothic Pro,Meiryo,Hiragino Sans GB W3,Noto Naskh Arabic,Droid Arabic Naskh,Geeza Pro,Simplified Arabic,Noto Sans Thai,Thonburi,Dokchampa,Droid Sans Thai,Droid Sans Fallback,-apple-system,'.SFNSDisplay-Regular',Heiti SC,Microsoft Yahei,Segoe UI;
+	line-height: 40px;
+	font-weight: 200;
+	font-size: 34px;
+}
+.ntitle {
+	font-weight: 400;
+	font-size: 30px;
+	color: rgb(0, 132, 191);
+	margin: 20px 0px 20px 30px;
+	display: block;
+}
+.stitle {
+	font-weight: 400;
+	font-size: 20px;
+	color: rgb(20, 20, 20);
+	margin: 0px 0px 2px 30px;
+	border-bottom: 1px solid #bbb;
+	display: block;
+}
+.qinfo {
+	background-color: whitesmoke;
+	border-top: 1px solid rgb(205, 207, 210);
+	padding: 10px 0px 10px 15px;
+    
+}
+
+
+.ilabel {
+
+}
+.idata {
+
+}
+
+
+
+.copyright {
+	margin: 0px auto 0px auto;
+	text-align: center;
+	color: #ccc;
+	z-index: 10;
+	width: 800px;
+	height: auto;
+	display: block;
+	padding: 0px 0px 0px 0px;
+}
+.copyright a, .copyright a:hover {color: #bbb;}
+
+
+
+
