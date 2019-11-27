@@ -1,0 +1,37 @@
+
+
++ GAMES
+menu = GAMES-IPv4
+title = GAMES - Game servers - IPv4
+
+++ CROSS-FIRE-1
+menu = CROSS-FIRE-1
+title = CROSS-FIRE-1 - 198.49.89.42
+host = 198.49.89.42
+
+++ CROSS-FIRE-2
+menu = CROSS-FIRE-2
+title = CROSS-FIRE-2 - 198.49.89.19
+host = 198.49.89.19
+
+++ FREE-FIRE-1
+menu = FREE-FIRE-1
+title = FREE-FIRE-1 - 143.92.126.71
+host = 143.92.126.71
+
+++ FREE-FIRE-2
+menu = FREE-FIRE-2
+title = FREE-FIRE-2 - 143.92.126.133
+host = 143.92.126.133
+
+++ PUBG-1
+menu = PUBG-1
+title = PUBG-1 - 49.51.136.156
+host = 49.51.136.156
+
+++ PUBG-2
+menu = PUBG-2
+title = PUBG-2 - 203.205.179.145
+host = 203.205.179.145
+
+

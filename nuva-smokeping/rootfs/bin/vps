@@ -1,0 +1,52 @@
+#!/bin/sh
+
+if [ -f /etc/os-release ]; then . /etc/os-release; fi
+if [ -f /etc/profile.d/00-env_vars.sh ]; then . /etc/profile.d/00-env_vars.sh; fi
+
+KR=$(uname -r)
+RT=$(ip ro get 1.2.3.4 | grep via | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#")
+
+RT_GWT=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f2 -d/)
+RT_DEV=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f3 -d/)
+RT_LOC=$(echo $RT | sed "s#.via.#/#; s#.src.#/#; s#.dev.#/#" | cut -f4 -d/ | awk '{print $1}')
+
+NAMESERVER=$(cat /etc/resolv.conf  | grep nameserver | cut -f2 -d" ")
+NAMESERVER=$(/bin/echo $NAMESERVER)
+
+# Loopbacks
+LOOPBACK4=$(ip a s dev lo | grep -v inet6 | grep inet | egrep -v 127\.0\.0\.1 | awk '{print $2}' | cut -f1 -d/)
+LOOPBACK4=$(/bin/echo $LOOPBACK4)
+LOOPBACK6=$(ip a s dev lo | grep inet6 | egrep -v 'inet6.::1/128' | awk '{print $2}' | cut -f1 -d/)
+LOOPBACK6=$(/bin/echo $LOOPBACK6)
+
+
+# conexao ssh ja mostra o vps-banner via banner do servidor ssh
+if [ "x$SSH_CONNECTION" = "x" ]; then
+	# modo docker exec
+	cat /etc/vps-banner 2>/dev/null
+else
+	# modo ssh
+	sshinfo=$(echo $SSH_CONNECTION | sed 's# #:#; s# #_#; s# #:#; s#_# -> #')
+	echo "      SSH Conecction: $sshinfo"
+	echo
+fi
+
+# Informacoes do sistema utilizado como base do container
+echo "      $PRETTY_NAME"
+echo "      Kernel $KR"
+echo
+echo "      $HOSTNAME"
+echo
+
+# Informacoes de rede do container VPS
+echo "      Resolv DNS...: $NAMESERVER"
+echo "      Local address: $RT_LOC"
+echo "      Local gateway: $RT_GWT"
+echo "      Local iface..: $RT_DEV"
+[ "x$LOOPBACK4" = "x" ] || \
+echo "      Loopback IPv4: $LOOPBACK4"
+[ "x$LOOPBACK6" = "x" ] || \
+echo "      Loopback IPv6: $LOOPBACK6"
+echo
+echo
+

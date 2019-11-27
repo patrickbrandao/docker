@@ -1,0 +1,204 @@
+
+
++ DNS-IPv4
+menu = DNS-IPv4
+title = DNS - Open Recursive Servers - IPv4
+
+++ Google-1-v4
+menu = Google 1
+title = Google 1 - 8.8.8.8
+host = 8.8.8.8
+
+++ Google-2-v4
+menu = Google 2
+title = Google 2 - 8.8.4.4
+host = 8.8.4.4
+
+
+++ Cloudflare-1-v4
+menu = Cloudflare 1
+title = Cloudflare 1 - 1.1.1.1
+host = 1.1.1.1
+
+++ Cloudflare-2-v4
+menu = Cloudflare 2
+title = Cloudflare 2 - 1.0.0.1
+host = 1.0.0.1
+
+
+++ GigaDNS-1-v4
+menu = GigaDNS 1
+title = GigaDNS 1 - 189.38.95.95
+host = 189.38.95.95
+
+++ GigaDNS-2-v4
+menu = GigaDNS 2
+title = GigaDNS 2 - 189.38.95.96
+host = 189.38.95.96
+
+++ OpenDNS-1-v4
+menu = OpenDNS 1
+title = OpenDNS 1 - 208.67.222.222
+host = 208.67.222.222
+
+++ OpenDNS-2-v4
+menu = OpenDNS 2
+title = OpenDNS 2 - 208.67.220.220
+host = 208.67.220.220
+
+++ OpenDNS-3-v4
+menu = OpenDNS 3
+title = OpenDNS 3 - 208.67.222.220
+host = 208.67.222.220
+
+++ OpenDNS-4-v4
+menu = OpenDNS 4
+title = OpenDNS 4 - 208.67.220.222
+host = 208.67.220.222
+
+++ Level3-DNS-1-v4
+menu = Level3 1
+title = Level3 1 - 4.2.2.1
+host = 4.2.2.1
+
+++ Level3-DNS-2-v4
+menu = Level3 2
+title = Level3 2 - 4.2.2.2
+host = 4.2.2.2
+
+++ Level3-DNS-3-v4
+menu = Level3 3
+title = Level3 3 - 4.2.2.3
+host = 4.2.2.3
+
+++ Level3-DNS-4-v4
+menu = Level3 4
+title = Level3 4 - 4.2.2.4
+host = 4.2.2.4
+
+++ Level3-DNS-5-v4
+menu = Level3 5
+title = Level3 5 - 4.2.2.5
+host = 4.2.2.5
+
+++ Level3-DNS-6-v4
+menu = Level3 6
+title = Level3 6 - 4.2.2.6
+host = 4.2.2.6
+
+++ Level3-DNS-7-v4
+menu = Level3 7
+title = Level3 7 - 209.244.0.3
+host = 209.244.0.3
+
+++ Level3-DNS-8-v4
+menu = Level3 8
+title = Level3 8 - 209.244.0.4
+host = 209.244.0.4
+
+
+
++ DNS-BR
+menu = DNS-BR
+title = DNS-BR - Servidores DNS do .br
+
+++ a-dns-br
+menu = a.dns.br
+title = a.dns.br  - 200.219.148.10
+host = 200.219.148.10
+
+++ b-dns-br
+menu = b.dns.br
+title = b.dns.br  - 200.189.41.10
+host = 200.189.41.10
+
+++ c-dns-br
+menu = c.dns.br
+title = c.dns.br  - 200.192.233.10
+host = 200.192.233.10
+
+++ d-dns-br
+menu = d.dns.br
+title = d.dns.br  - 200.219.154.10
+host = 200.219.154.10
+
+++ e-dns-br
+menu = e.dns.br
+title = e.dns.br  - 200.229.248.10
+host = 200.229.248.10
+
+++ f-dns-br
+menu = f.dns.br
+title = f.dns.br  - 200.219.159.10
+host = 200.219.159.10
+
+
++ DNS-Root-Servers-v4
+menu = DNS-Root-Servers-IPv4
+title = Servidores de DNS Autoritativos Raiz
+
+++ DNS-ROOT-A-v4
+menu = DNS-ROOT-A
+title = Servidor DNS ROOT - A - 198.41.0.4
+host = 198.41.0.4
+
+++ DNS-ROOT-B-v4
+menu = DNS-ROOT-B
+title = Servidor DNS ROOT - B - 192.228.79.201
+host = 192.228.79.201
+
+++ DNS-ROOT-C-v4
+menu = DNS-ROOT-C
+title = Servidor DNS ROOT - C - 192.33.4.12
+host = 192.33.4.12
+
+++ DNS-ROOT-D-v4
+menu = DNS-ROOT-D
+title = Servidor DNS ROOT - D - 199.7.91.13
+host = 199.7.91.13
+
+++ DNS-ROOT-E-v4
+menu = DNS-ROOT-E
+title = Servidor DNS ROOT - E - 192.203.230.10
+host = 192.203.230.10
+
+++ DNS-ROOT-F-v4
+menu = DNS-ROOT-F
+title = Servidor DNS ROOT - F - 192.5.5.241
+host = 192.5.5.241
+
+++ DNS-ROOT-G-v4
+menu = DNS-ROOT-G
+title = Servidor DNS ROOT - G - 192.112.36.4
+host = 192.112.36.4
+
+++ DNS-ROOT-H-v4
+menu = DNS-ROOT-H
+title = Servidor DNS ROOT - H - 198.97.190.53
+host = 198.97.190.53
+
+++ DNS-ROOT-I-v4
+menu = DNS-ROOT-I
+title = Servidor DNS ROOT - I - 192.36.148.17
+host = 192.36.148.17
+
+++ DNS-ROOT-J-v4
+menu = DNS-ROOT-J
+title = Servidor DNS ROOT - J - 192.58.128.30
+host = 192.58.128.30
+
+++ DNS-ROOT-K-v4
+menu = DNS-ROOT-K
+title = Servidor DNS ROOT - K - 193.0.14.129
+host = 193.0.14.129
+
+++ DNS-ROOT-L-v4
+menu = DNS-ROOT-L
+title = Servidor DNS ROOT - L - 199.7.83.42
+host = 199.7.83.42
+
+++ DNS-ROOT-M-v4
+menu = DNS-ROOT-M
+title = Servidor DNS ROOT - M - 202.12.27.33
+host = 202.12.27.33
+
