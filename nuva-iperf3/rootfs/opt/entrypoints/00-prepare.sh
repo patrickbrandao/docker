@@ -17,6 +17,11 @@
 	[ "x$UUID" = "x" ] && [ -x /usr/bin/uuidgen ] && UUID=$(/usr/bin/uuidgen -t)
 	[ "x$UUID" = "x" ] || echo "$UUID" > /etc/machine-id
 
+	# supervisor
+	[ -d /var/log/supervisor ] || mkdir -p /var/log/supervisor
+	touch /var/log/supervisor/supervisord.log
 
+	# Segurar boot para analise de scripts
+	[ "x$ENTRYPOINT_WAIT" = "x" ] || sleep 9988776655
 
 exit 0
